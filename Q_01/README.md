@@ -12,4 +12,23 @@
 제시된 소스코드에서 문제가 발생하는 `원인을 모두 서술`하시오.
 
 ## 답안
-- 
+- - `NullReferenceException`: Object reference not set to an instance of an object
+CubeManager.SetCubePosition (System.Single x, System.Single y, System.Single z) (at Assets/Scripts/CubeManager.cs:27)
+CubeManager.Awake () (at Assets/Scripts/CubeManager.cs:14)
+- 참조된걸 못찾을 때? 잘못 됐을때 나오는 널레퍼런스가 나온다 
+Object reference not set to an instance of an object CubManager.SetCubePosition…
+CubManager.SetCubePosition… 오브젝트의 인스턴스 참조가 안되있는거 같다.
+- SetCubePosition()은 컨트롤러에서 담당하고,  [SerializeField] 로 인스펙터에서 입력해두고 
+바꿀수 있도록 변경
+생성은 되는데 위치가 안바뀌었다.
+SetCubePosition() 함수가 작동안되고있다.
+    
+    ![imageQ01_1](https://github.com/user-attachments/assets/2e94b1b2-4fcd-4b1a-b599-3122ce7df853)
+    
+- 이제 매니저에서 쓸모없는 _cubeSetPoint 없애고 리팩토링
+    
+    ![imageQ01_2](https://github.com/user-attachments/assets/d7f0daa5-e035-4386-986b-e36978e577e1)
+    
+- 잘작동
+    
+   ![imageQ01_3](https://github.com/user-attachments/assets/eadc30cc-0079-463b-8f07-223f6cfa3254)
