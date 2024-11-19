@@ -11,4 +11,15 @@
 제시된 프로젝트에서 발생하는 `문제들을 모두 서술`하고 올바르게 동작하도록 `소스코드를 개선`하시오.
 
 ## 답안
-- 
+- 카메라도 플레이어에 달아서 돌떄 돌아보게한다
+    
+    ![241119_Q6_01](https://github.com/user-attachments/assets/e5bf15d0-206c-4e58-9abf-c4919af68a35)
+
+    
+- Gun인스펙터에 TargetLayer에 Enemy등록
+- 뭔가 머즐포인트가 이상하다
+    
+    ![241119_Q6_02MuzzlePoint](https://github.com/user-attachments/assets/ada0c8dd-446c-47f9-a968-73134c89eba0)
+    
+- 카메라를 달아두면서 muzzlePOint가 이상하게인식됨
+  - 따로 camPoint만들어서 Body를 달아두었는데도 머즐포인트가 이상하게 됨
