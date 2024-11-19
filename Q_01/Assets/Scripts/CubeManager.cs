@@ -11,7 +11,9 @@ public class CubeManager : MonoBehaviour
 
     private void Awake()
     {
-        SetCubePosition(3, 0, 3);
+        // SetCubePosition(3, 0, 3);
+        // 시작하자마자 
+        
     }
 
     private void Start()
@@ -24,7 +26,7 @@ public class CubeManager : MonoBehaviour
         _cubeSetPoint.x = x;
         _cubeSetPoint.y = y;
         _cubeSetPoint.z = z;
-        _cubeController.SetPosition();
+     //   _cubeController.SetPosition();
     }
 
     private void CreateCube()
