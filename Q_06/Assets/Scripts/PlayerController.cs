@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     private Gun _gun;
     
     [SerializeField] private Transform _muzzlePoint;
+    // [SerializeField] private Transform _camPoint;
     [SerializeField] private float _verticalRotateRange;
     [SerializeField] private float _rotateSpeed;
     [SerializeField] private float _moveSpeed;

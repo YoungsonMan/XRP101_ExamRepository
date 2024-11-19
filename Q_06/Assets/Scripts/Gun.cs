@@ -5,6 +5,8 @@ public class Gun : MonoBehaviour
     [SerializeField] private float _range;
     [SerializeField] private LayerMask _targetLayer;
 
+
+    
     public void Fire(Transform origin)
     {
         Ray ray = new(origin.position, Vector3.forward);
