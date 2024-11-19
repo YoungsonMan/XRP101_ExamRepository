@@ -17,6 +17,9 @@ public class StateIdle : PlayerState
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            // 테스트용 Q버튼 찍혔나 로그
+            Debug.Log("Q버튼이 눌렸습니다.");
+
             Machine.ChangeState(StateType.Attack);
         }
     }
