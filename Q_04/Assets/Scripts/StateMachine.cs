@@ -27,11 +27,17 @@ public class StateMachine
         }
 
         CurrentType = states[0].ThisType;
+        // states[0] 이 처음 상태인데
+        // StateAttack 가면서 공격상태인 1로가는데 
+        // StateIdle 로 가려고 바꾸는데 [0]으로 안가고 [1]에서 올라가서 그런건가..?
+        // 
         CurrentState.Enter();
     }
 
     public void OnUpdate()
     {
+        Debug.Log($" CurrentType = {CurrentType}");
+        Debug.Log($" CurrentState = {CurrentState}");
         CurrentState.OnUpdate();
     }
 

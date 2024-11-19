@@ -33,6 +33,8 @@ public class StateAttack : PlayerState
 
     public override void OnUpdate()
     {
+        
+
         Debug.Log("Attack On Update");
         if (_attackCount > _prevAttackCount) // 친횟수가 전에친횟수보다 크면 넘어가기
         {
