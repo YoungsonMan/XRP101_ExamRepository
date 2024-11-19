@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CubeController : MonoBehaviour
 {
-    public Vector3 SetPoint { get; private set; }
-
-  //  public void SetPosition()
-  //  {
-  //      transform.position = SetPoint;
-  //  }
+    [SerializeField] public Vector3 SetPoint; 
+    // 그냥 인스펙터에서 3,0,3 조정하기
+    public void SetPosition()
+    {
+        transform.position = SetPoint;
+    }
 }

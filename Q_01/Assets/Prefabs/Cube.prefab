@@ -110,4 +110,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f02fdb359ad7547939097f2442d99daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SetPoint>k__BackingField: {x: 0, y: 0, z: 0}
+  SetPoint: {x: 3, y: 0, z: 3}
