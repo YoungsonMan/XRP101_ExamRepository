@@ -12,6 +12,8 @@ public class BulletController : PooledBehaviour
     private Rigidbody _rigidbody;
     private WaitForSeconds _wait;
     
+    
+
     private void Awake()
     {
         Init();
@@ -20,15 +22,18 @@ public class BulletController : PooledBehaviour
     private void OnEnable()
     {
         StartCoroutine(DeactivateRoutine());
+        // 활성되면 발사
+        Fire();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            other
-                .GetComponent<PlayerController>()
-                .TakeHit(_damageValue);
+            PlayerController player = GetComponent<PlayerController>();
+            player.TakeHit(_damageValue);
+            ReturnPool();
+            // other.GetComponent<PlayerController>().TakeHit(_damageValue);
         }
     }
 

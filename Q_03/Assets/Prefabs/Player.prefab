@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 013c59543c7764860abf7a37668cbfe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _moveSpeed: 20
   <Hp>k__BackingField: 15
 --- !u!82 &-117981830401906550
 AudioSource:

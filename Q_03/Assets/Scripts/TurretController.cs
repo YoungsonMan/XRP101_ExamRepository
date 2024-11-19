@@ -7,16 +7,22 @@ public class TurretController : MonoBehaviour
 {
     [SerializeField] private Transform _muzzlePoint;
     [SerializeField] private CustomObjectPool _bulletPool;
-    [SerializeField] private float _fireCooltime;
+    [SerializeField] private float _fireCooltime;           // 1.5 잘 기입되있음
     
     private Coroutine _coroutine;
     private WaitForSeconds _wait;
+
+    private GameObject _target;
 
     private void Awake()
     {
         Init();
     }
-
+    private void Update()
+    {
+        FindPlayer();
+        Fire(_target.transform);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -30,29 +36,32 @@ public class TurretController : MonoBehaviour
         _coroutine = null;
         _wait = new WaitForSeconds(_fireCooltime);
         _bulletPool.CreatePool();
+        FindPlayer();
     }
 
-    private IEnumerator FireRoutine(Transform target)
+    // 플레이어 찾는 함수 작성
+    private void FindPlayer()
+    {
+        _target = GameObject.FindWithTag("Player");
+        // _target.transform.position;
+    }
+    private IEnumerator FireRoutine()
     {
         while (true)
         {
             yield return _wait;
             
-            transform.rotation = Quaternion.LookRotation(new Vector3(
-                target.position.x,
-                0,
-                target.position.z)
-            );
+            transform.rotation = Quaternion.LookRotation(_target.transform.position);
             
             PooledBehaviour bullet = _bulletPool.TakeFromPool();
             bullet.transform.position = _muzzlePoint.position;
-            bullet.OnTaken(target);
+            bullet.OnTaken();
             
         }
     }
 
     private void Fire(Transform target)
     {
-        _coroutine = StartCoroutine(FireRoutine(target));
+        _coroutine = StartCoroutine(FireRoutine());
     }
 }
