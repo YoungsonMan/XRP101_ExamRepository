@@ -6,8 +6,8 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     private bool _hasFollowTarget;
-    private Transform _followTarget;
-    public Transform FollowTarget
+    [SerializeField] private Transform _followTarget;
+    [SerializeField] public Transform FollowTarget
     {
         get => _followTarget;
         set

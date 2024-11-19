@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     private Gun _gun;
     
     [SerializeField] private Transform _muzzlePoint;
+    // [SerializeField] private Transform _camPoint;
     [SerializeField] private float _verticalRotateRange;
     [SerializeField] private float _rotateSpeed;
     [SerializeField] private float _moveSpeed;
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            Debug.Log("户具户具");
             _gun.Fire(_muzzlePoint);    
         }
     }

@@ -122,6 +122,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &229959213 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 428175645417226808, guid: 17a307c6d9dbd418e8df9f4eb96edb32, type: 3}
+  m_PrefabInstance: {fileID: 428175645406933292}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef099f470ba5340d3bedd4507c18931e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,7 +530,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 428175645417226808, guid: 17a307c6d9dbd418e8df9f4eb96edb32, type: 3}
+      - m_Target: {fileID: 229959213}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 3
