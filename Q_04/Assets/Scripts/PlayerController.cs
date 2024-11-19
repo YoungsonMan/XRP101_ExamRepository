@@ -7,8 +7,10 @@ public class PlayerController : MonoBehaviour
     [field: SerializeField] [field: Range(0, 30)] public float AttackRadius { get; private set; }
     [field: SerializeField] public int AttackValue { get; private set; }
 
-    private StateMachine _state;
+    [SerializeField] private StateMachine _state;
+    // È®ÀÎ¿ë
 
+    
     private void Awake()
     {
         Init();
@@ -17,6 +19,8 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         _state.OnUpdate();
+
+        
     }
 
     private void Init()
